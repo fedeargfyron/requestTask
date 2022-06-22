@@ -37,34 +37,53 @@ const removeLabelOptions = (e) => {
     label.classList.remove("visible");
 }
 
-const validations = (e) => {
+const validations = (e, values) => {
     let alertValue = fieldsValidations[e.id](e.value);
     if(alertValue) 
         createLabel(e, alertValue);
+    
+    if(values){
+        values[e.id] = e.value;
+    }
 }
 
 const validationsListener = (e) => {
     validations(e.target);
 }
 
-const validateAll = () => {
+const validateAll = (makeRequest) => {
+    let values = {};
     let inputs = document.querySelectorAll("input[type=text]");
-    inputs.forEach(x => validations(x));
-
+    inputs.forEach(x => validations(x, values));
     let selectPais = document.getElementById("pais");
-    validations(selectPais);
+    validations(selectPais, values);
     validations({ id: "sexo"});
     validations({ id: "intereses"});
+
+    if(document.getElementsByClassName("error").length > 0){
+        return;
+    }
+    makeRequest(values);
+}
+
+const makeRequest = (values) => {
+    const httpRequest = new XMLHttpRequest();
+    let parameters = Object.keys(values).map(key => `${key}=${values[key]}`).join('&');
+    
+    const url = `http://curso-dev-2021.herokuapp.com/newsletter?${parameters}`;
+    httpRequest.open("GET", url);
+    httpRequest.send();
+    httpRequest.onreadystatechange = () => {
+        if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
+            document.getElementById("modal-body").innerHTML = httpRequest.responseText;
+            document.getElementById("modal").style.display = "flex";
+        }
+    }
 }
 
 const submit = (e) => {
     e.preventDefault();
-    validateAll();
-    if(document.getElementsByClassName("error").length > 0){
-        return;
-    }
-
-    document.getElementById("modal").style.display = "flex";
+    validateAll(makeRequest);
 }
 
 window.onload = () => {
