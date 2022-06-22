@@ -1,0 +1,23 @@
+body{
+    background-image: url("../Images/background1.jpg");
+    background-size: cover;
+}
+
+footer{
+    position: fixed;
+    bottom: 0;
+}
+
+.subscribe-main{
+    display: flex;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+    height: fit-content;
+}
+
+.subscribe-main h1{
+    font-size: 1.75rem;
+    padding: 1rem;
+    font-weight: bold;
+}

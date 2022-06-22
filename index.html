@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/7f4a3cf0b2.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./CSS/reset.css">
+    <link rel="stylesheet" href="./CSS/layout.css">
+    <link rel="stylesheet" href="./CSS/subscribe.css">
+    <link rel="stylesheet" href="./CSS/form.css">
+    <link rel="stylesheet" href="./CSS/modal.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+    <script type="module" src="./JS/subscribe.js"></script>
+    <script type="module" src="./JS/validations.js"></script>
+    <title>Parcial Arrón</title>
+</head>
+<body>
+    <header>
+        <a class="logo">
+            Arron Factories™
+        </a>
+        <nav>
+            <ul class="nav-items-container">
+                <li><a>HOME</a></li>
+                <li><a>OUR TEAM</a></li>
+                <li><a>PROJECTS</a></li>
+                <li><a>CONTACT</a></li>
+                <li><a>SUBSCRIBE</a></li>
+            </ul>
+            <i class="fas fa-bars"></i>
+        </nav>
+    </header>
+    <main class="subscribe-main">
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span id="close" class="close">&times;</span>
+                    <h2>Muchas gracias por suscribirte!</h2>
+                </div>
+                <div class="modal-body">
+                    <p>En breve te llegará al email información asociada a la compañia y distintas promociones.</p>
+                </div>
+            </div>
+        </div>
+        <form id="subscribe-form">
+            <h1>Suscribite gratis!</h1>
+            <div class="row-container">
+                <div class="input-container">
+                    <input id="name" type="text" placeholder="Nombre">
+                    <label id="lblname" for="name"></label>
+                </div>
+                <div class="input-container">
+                    <input id="apellido" type="text" placeholder="Apellido">
+                    <label id="lblapellido" for="apellido"></label>
+                </div>
+            </div>
+            <div class="row-container">
+                <div class="input-container">
+                    <input id="email" type="text" placeholder="Email">
+                    <label id="lblemail" for="email"></label>
+                </div>
+                <div class="input-container">
+                    <input id="edad" type="text" placeholder="Edad">
+                    <label id="lbledad" for="edad"></label>
+                </div>
+            </div>
+            <div class="row-container">
+                <div class="input-container">
+                    <fieldset>
+                        <input type="radio" name="sexo" id="hombre" value="Hombre">
+                        <label for="hombre">Hombre</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="radio" name="sexo" id="mujer" value="Mujer">
+                        <label for="mujer">Mujer</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="radio" name="sexo" id="otros" value="Otros">
+                        <label for="otros">Otros</label>
+                    </fieldset>
+                    <label id="lblsexo"></label>
+                </div>
+                <div class="input-container">
+                    <fieldset>
+                        <input type="checkbox" name="intereses" id="deporte" value="Deporte">
+                        <label for="deporte">Deporte</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="checkbox" name="intereses" id="musica" value="Musica">
+                        <label for="musica">Musica</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="checkbox" name="intereses" id="juegos" value="Juegos">
+                        <label for="juegos">Juegos</label>
+                    </fieldset>
+                    <fieldset>
+                        <input type="checkbox" name="intereses" id="tecnologia" value="Tecnologia">
+                        <label for="tecnologia">Tecnologia</label>
+                    </fieldset>
+                    <label id="lblintereses"></label>
+                </div>
+            </div>
+            <div class="row-container">
+                <div class="input-container">
+                    <select id="pais" placeholder="Seleccionar...">
+                        <option value="">Seleccionar...</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Chile">Chile</option>
+                        <option value="Brasil">Brasil</option>
+                        <option value="Uruguay">Uruguay</option>
+                    </select>
+                    <label id="lblpais" for="pais"></label>
+                </div>
+            </div>
+            <div class="row-container">
+                <div class="input-container alone">
+                    <label for="comentarios">Comentarios (Opcional)</label>
+                    <textarea id="comentarios"></textarea>
+                </div>
+            </div>
+            <button id="submitBtn" type="submit">Vamos!</button>
+        </form>
+    </main>
+    <footer>
+        <p>Arron Factories 2022. Rights reserved.</p>
+    </footer>
+</body>
+</html>

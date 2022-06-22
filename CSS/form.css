@@ -1,0 +1,108 @@
+:root {
+    --button-background: #0575E6;
+    --input-background: #e4eff8;
+    --text-color: rgb(0,0,0);
+    --error-background: #ffa69e;
+    --error-label: #ffa69e;
+    --radius-50: 50px;
+    --padding-1: 1rem;
+}
+
+::placeholder {
+    color: var(--text-color);
+}
+
+form{
+    background-color: var(--transparent-background);
+    padding: var(--padding-1);
+    margin-bottom: 60px;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+
+input,
+select,
+option{
+    font-family: var(--main-font);
+    font-weight: bold;
+    border-radius: var(--radius-50);
+    background-color: var(--input-background);
+}
+
+input[type=text]{
+    border: unset;
+    color: var(--text-color);
+    padding: var(--padding-1);
+    margin: .5rem .25rem;
+}
+
+button{
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: unset;
+    border-radius: var(--radius-50);
+    padding: var(--padding-1) 2rem;
+    cursor: pointer;
+}
+
+select{
+    padding: .5rem;
+    margin-top: .5rem;
+}
+
+textarea{
+    min-height: 150px;
+    margin-top: 1rem;
+    padding: .5rem;
+    resize: none;
+    background-color: var(--input-background);
+}
+
+label{
+    margin-left: 1rem;
+    color: var(--input-background);
+}
+
+.row-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.input-container{
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    text-align:start;
+    padding: .25rem;
+    
+}
+
+.input-container > label{
+    color: var(--error-label);
+    max-width: fit-content;
+    display: none;
+}
+
+.input-container fieldset{
+    padding: .25rem;
+}
+
+
+.alone{
+    width: 100%;
+    margin: 1rem 0;
+}
+
+.alone > label{
+    display: block;
+    margin: 0;
+}
+
+.visible{
+    display: block !important;
+}
+
+.error{
+    background-color: var(--error-background);
+}
