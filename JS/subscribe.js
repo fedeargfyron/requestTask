@@ -70,7 +70,7 @@ const makeRequest = (values) => {
     const httpRequest = new XMLHttpRequest();
     let parameters = Object.keys(values).map(key => `${key}=${values[key]}`).join('&');
     
-    const url = `http://curso-dev-2021.herokuapp.com/newsletter?${parameters}`;
+    const url = `https://curso-dev-2021.herokuapp.com/newsletter?${parameters}`;
     httpRequest.open("GET", url);
     httpRequest.send();
     httpRequest.onreadystatechange = () => {
