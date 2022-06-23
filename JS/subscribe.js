@@ -74,8 +74,9 @@ const makeRequest = (values) => {
     httpRequest.open("GET", url);
     httpRequest.send();
     httpRequest.onreadystatechange = () => {
-        if(httpRequest.readyState === XMLHttpRequest.DONE && httpRequest.status === 200){
-            document.getElementById("modal-body").innerHTML = httpRequest.responseText;
+        if(httpRequest.readyState === XMLHttpRequest.DONE){
+            let message = httpRequest.status === 200 ? "Suscripción exitosa\n" : "Error en la suscripción\n";
+            document.getElementById("body-text").innerHTML = message + httpRequest.responseText;
             document.getElementById("modal").style.display = "flex";
         }
     }
